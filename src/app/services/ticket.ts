@@ -15,7 +15,7 @@ export class Ticket {
     return this._http.post(this.url, { carrito });
   };
 
-  public pagarTicket(id:string): Observable<any> {
+  public pagarTicket(id:number): Observable<any> {
     return this._http.post(this.url+'/'+id+'/pagar', {});
   };
 
@@ -23,11 +23,11 @@ export class Ticket {
     return this._http.get(this.url+'/my-tickets');
   };
 
-  public getMyTicket(id:string): Observable<any> {
+  public getMyTicket(id:number): Observable<any> {
     return this._http.get(this.url+'/my-tickets/'+id);
   };
 
-  public cancelarTicket(id:string): Observable<any> {
+  public cancelarTicket(id:number): Observable<any> {
     return this._http.put(this.url+'/cancelar/'+id, {});
   };
 
@@ -35,7 +35,7 @@ export class Ticket {
     return this._http.get(this.url, { params: params || {} });
   };
 
-  public getTicket(id:string): Observable<any> {
+  public getTicket(id:number): Observable<any> {
     return this._http.get(this.url+'/'+id);
   };
 }

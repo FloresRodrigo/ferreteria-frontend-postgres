@@ -27,15 +27,15 @@ export class Usuario {
     return this._http.get(this.url, { params: params || {} });
   };
 
-  public getUsuario(id:string): Observable<any> {
+  public getUsuario(id:number): Observable<any> {
     return this._http.get(this.url+'/'+id);
   };
 
-  public updateUsuario(id:string, body: { nombre_completo?:string, username?:string, email?:string, password?:string, estado?:string }): Observable<any> {
+  public updateUsuario(id:number, body: { nombre_completo?:string, username?:string, email?:string, password?:string, estado?:string }): Observable<any> {
     return this._http.put(this.url+'/'+id, body);
   };
 
-  public deleteUsuario(id:string): Observable<any> {
+  public deleteUsuario(id:number): Observable<any> {
     return this._http.delete(this.url+'/'+id);
   };
 }

@@ -97,12 +97,12 @@ export class Compra implements OnInit, OnDestroy {
     window.dispatchEvent(new Event('carritoActualizado'));
   };
 
-  getCantidadCarrito(id:string): number {
+  getCantidadCarrito(id:number): number {
     const articulo = this.carrito().find(item  => item.id === id);
     return articulo ? articulo.cantidad : 0;
   };
 
-  sumar(id:string) {
+  sumar(id:number) {
     const carrito = [...this.carrito()];
     const item = carrito.find(item => item.id === id);
     if(item) {
@@ -114,7 +114,7 @@ export class Compra implements OnInit, OnDestroy {
     this.guardarCarrito();
   };
 
-  restar(id:string) {
+  restar(id:number) {
     let carrito = [...this.carrito()];
     const item = carrito.find(item => item.id === id);
     if(!item) {

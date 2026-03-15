@@ -48,7 +48,7 @@ export class Carrito implements OnInit, OnDestroy {
     );
     forkJoin(requests).subscribe(results => {
       const articulosConCantidad = results.map((res, index) => {
-        const articulo = res.data || res;
+        const articulo = res.data;
         return {
           ...articulo,
           id: itemId(articulo),
@@ -59,7 +59,7 @@ export class Carrito implements OnInit, OnDestroy {
       this.actualizarTotales();
     });
     function itemId(articulo: any) {
-      return articulo.id || articulo._id;
+      return articulo.id;
     };
   };
 
@@ -70,7 +70,7 @@ export class Carrito implements OnInit, OnDestroy {
     this.actualizarTotales();
   };
 
-  sumar(id: string) {
+  sumar(id: number) {
     const carrito = [...this.carrito()];
     const item = carrito.find(item => item.id === id);
     if (!item) {
@@ -81,7 +81,7 @@ export class Carrito implements OnInit, OnDestroy {
     this.guardarCarrito();
   };
 
-  restar(id: string) {
+  restar(id: number) {
     let carrito = [...this.carrito()];
     const item = carrito.find(item => item.id === id);
     if (!item) {
@@ -95,7 +95,7 @@ export class Carrito implements OnInit, OnDestroy {
     this.guardarCarrito();
   };
 
-  eliminar(id: string) {
+  eliminar(id: number) {
     this.carrito.update(carrito => carrito.filter(item => item.id !== id));
     this.guardarCarrito();
   };
@@ -146,7 +146,7 @@ export class Carrito implements OnInit, OnDestroy {
       return;
     };
     this.loading.set(true);
-    this.ticketService.pagarTicket(ticket._id).subscribe(
+    this.ticketService.pagarTicket(ticket.id).subscribe(
       (result:any) => {
         this.loading.set(false);
         this.linkPago.set(result.data);

@@ -52,7 +52,6 @@ export class Header implements OnInit, OnDestroy{
   logout() {
     this.authService.logout();
     this.user = null;
-    window.dispatchEvent(new Event('carritoActualizado'));
     this.router.navigateByUrl('');
   };
 

@@ -13,7 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class InventarioForm implements OnInit{
   API_CONFIG = API_CONFIG;
-  articuloId: string | null = null;
+  articuloId: number | null = null;
   articulo: any = {
     nombre: '',
     descripcion: '',
@@ -31,7 +31,8 @@ export class InventarioForm implements OnInit{
   ) {};
 
   ngOnInit(): void {
-    this.articuloId = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
+    this.articuloId = id && !isNaN(Number(id)) ? Number(id) : null;
     if(this.articuloId) {
       this.isEdit.set(true);
       this.getArticulo();

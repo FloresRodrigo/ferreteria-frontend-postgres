@@ -161,7 +161,7 @@ export class Perfil implements OnInit {
       return;
     };
     this.loading.set(true);
-    this.ticketService.pagarTicket(ticket._id).subscribe(
+    this.ticketService.pagarTicket(ticket.id).subscribe(
       (result:any) => {
         this.loading.set(false);
         this.linkPago.set(result.data);
@@ -182,7 +182,7 @@ export class Perfil implements OnInit {
       return;
     };
     this.loading.set(true);
-    this.ticketService.cancelarTicket(ticket._id).subscribe(
+    this.ticketService.cancelarTicket(ticket.id).subscribe(
       (result:any) => {
         this.loading.set(false);
         alert(result.msg);

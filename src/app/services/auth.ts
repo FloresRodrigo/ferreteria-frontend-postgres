@@ -68,6 +68,7 @@ export class Auth {
     localStorage.removeItem('email');
     localStorage.removeItem('token');
     sessionStorage.removeItem('carrito');
+    window.dispatchEvent(new Event('carritoActualizado'));
   };
 
   private decodeToken(): any | null {

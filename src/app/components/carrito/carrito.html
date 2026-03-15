@@ -62,7 +62,7 @@
       </div>
       <div class="ticket-body" *ngIf="ticket() as t">
         <div class="ticket-meta">
-          <div><strong>Ticket Nº</strong> {{ t.nro_ticket }}</div>
+          <div><strong>Ticket Nº</strong> {{ t.id }}</div>
           <div class="text-muted">
             {{ t.fecha_compra | date:'dd/MM/yyyy HH:mm' }}
           </div>

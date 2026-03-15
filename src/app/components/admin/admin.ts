@@ -273,7 +273,7 @@ export class Admin {
       return;
     };
     this.loading.set(true);
-    this.usuarioService.updateUsuario(usuario._id, body).subscribe(
+    this.usuarioService.updateUsuario(usuario.id, body).subscribe(
       (result: any) => {
         alert(result.msg);
         this.loading.set(false);
@@ -287,7 +287,7 @@ export class Admin {
     );
   };
 
-  eliminarUsuario(id: string) {
+  eliminarUsuario(id: number) {
     if (!confirm('¿Eliminar usuario?')) {
       return;
     };

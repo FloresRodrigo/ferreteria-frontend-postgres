@@ -27,19 +27,19 @@ export class Articulo {
     return this._http.post(this.url+'/inventario', articulo);
   };
 
-  public getArticuloAdmin(id:string): Observable<any> {
+  public getArticuloAdmin(id:number): Observable<any> {
     return this._http.get(this.url+'/inventario/'+id);
   };
 
-  public updateArticulo(id:string, articulo:FormData): Observable<any> {
+  public updateArticulo(id:number, articulo:FormData): Observable<any> {
     return this._http.put(this.url+'/inventario/'+id, articulo);
   };
 
-  public deleteArticulo(id:string): Observable<any> {
+  public deleteArticulo(id:number): Observable<any> {
     return this._http.delete(this.url+'/inventario/'+id);
   };
 
-  public getArticuloPublic(id:string): Observable<any> {
+  public getArticuloPublic(id:number): Observable<any> {
     return this._http.get(this.url+'/'+id);
   };
 }

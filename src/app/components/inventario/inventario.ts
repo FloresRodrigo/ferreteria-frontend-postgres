@@ -134,14 +134,14 @@ export class Inventario implements OnInit{
     this.router.navigateByUrl('/inventario-form');
   };
 
-  updateArticulo(id:string) {
+  updateArticulo(id:number) {
     if(!confirm('¿Editar articulo?')) {
       return;
     };
     this.router.navigate(['inventario-form', id]);
   };
 
-  deleteArticulo(id:string) {
+  deleteArticulo(id:number) {
     if(!confirm('¿Eliminar articulo?')) {
       return;
     };

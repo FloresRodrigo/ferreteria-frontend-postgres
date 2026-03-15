@@ -31,12 +31,15 @@ export class Login implements AfterViewInit {
       console.error('Google no cargado');
       return;
     };
-    google.accounts.id.initialize({
-      client_id: API_CONFIG.googleClientId,
-      callback: (response: any) => {
-        this.loginGoogle(response.credential);
-      }
-    });
+    if(!(window as any)._googleInitialized) {
+      google.accounts.id.initialize({
+        client_id: API_CONFIG.googleClientId,
+        callback: (response: any) => {
+          this.loginGoogle(response.credential);
+        }
+      });
+      (window as any)._googleInitialized = true;
+    };
     google.accounts.id.renderButton(
       document.getElementById('googleBtn'),
       {

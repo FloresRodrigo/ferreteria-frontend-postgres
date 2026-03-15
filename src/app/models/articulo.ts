@@ -1,5 +1,5 @@
 export class Articulo {
-    _id!: string;
+    id!: number;
     nombre: string;
     descripcion: string;
     imagen: string;

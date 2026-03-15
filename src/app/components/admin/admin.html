@@ -135,7 +135,7 @@
         <div class="mb-3">
           <select class="form-select" id="usuarios" [(ngModel)]="usuarioSelect" (change)="cargarTickets()">
             <option value="">Todos los usuarios</option>
-            <option *ngFor="let u of allUsuarios()" [value]="u._id">
+            <option *ngFor="let u of allUsuarios()" [value]="u.id">
               {{ u.username }}
             </option>
           </select>
@@ -145,7 +145,7 @@
         </div>
         <div *ngFor="let t of tickets()" class="ticket-item" (click)="verTicket(t)">
           <div>
-            <strong>Ticket #{{ t.nro_ticket }}</strong>
+            <strong>Ticket #{{ t.id }}</strong>
             <div class="text-muted small">{{ t.estado }}</div>
           </div>
           <div class="fw-semibold">
@@ -203,7 +203,7 @@
                   {{ loading() ? 'Procesando...' : 'Editar' }}
                 </button>
                 <button class="btn btn-sm btn-danger rounded-pill fw-semibold shadow-sm action-btn del-btn"
-                  [disabled]="loading()" (click)="eliminarUsuario(u._id)">
+                  [disabled]="loading()" (click)="eliminarUsuario(u.id)">
                   <i class="bi bi-trash"></i>
                   {{ loading() ? 'Procesando...' : 'Eliminar' }}
                 </button>
@@ -333,7 +333,7 @@
     <div class="ticket-header">
       <h5 class="fw-bold mb-1">Detalle del ticket</h5>
       <div class="ticket-meta text-muted">
-        <div>Nro. Ticket: {{ ticket()?.nro_ticket }}</div>
+        <div>Nro. Ticket: {{ ticket()?.id }}</div>
         <div>Estado: {{ ticket()?.estado }}</div>
         <div>Fecha de compra: {{ ticket()?.fecha_compra | date:'dd/MM/yyyy HH:mm' }}</div>
       </div>

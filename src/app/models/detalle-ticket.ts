@@ -1,6 +1,7 @@
 export class DetalleTicket {
-    _id!: string;
-    id_articulo!: string;
+    id!: number;
+    id_articulo!: number;
+    id_ticket!: number;
     nombre_articulo!: string;
     precio_unitario!: number;
     cantidad!: number;

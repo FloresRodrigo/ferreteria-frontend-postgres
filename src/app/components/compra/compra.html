@@ -58,14 +58,14 @@
               <p class="text-muted small product-desc">{{ art.descripcion }}</p>
               <p class="text-primary fw-bold">${{ art.precio }}</p>
               <div class="text-center">
-                <button *ngIf="getCantidadCarrito(art._id) === 0" class="btn btn-primary rounded-pill w-100"
-                  (click)="sumar(art._id)">
+                <button *ngIf="getCantidadCarrito(art.id) === 0" class="btn btn-primary rounded-pill w-100"
+                  (click)="sumar(art.id)">
                   Agregar al carrito
                 </button>
-                <div *ngIf="getCantidadCarrito(art._id) > 0" class="quantity-control">
-                  <button (click)="restar(art._id)">-</button>
-                  <span>{{ getCantidadCarrito(art._id) }}</span>
-                  <button (click)="sumar(art._id)">+</button>
+                <div *ngIf="getCantidadCarrito(art.id) > 0" class="quantity-control">
+                  <button (click)="restar(art.id)">-</button>
+                  <span>{{ getCantidadCarrito(art.id) }}</span>
+                  <button (click)="sumar(art.id)">+</button>
                 </div>
               </div>
             </div>
@@ -81,14 +81,14 @@
             <p class="fw-bold text-primary">${{ art.precio }}</p>
           </div>
           <div>
-            <button *ngIf="getCantidadCarrito(art._id) === 0" class="btn btn-primary rounded-pill"
-              (click)="sumar(art._id)">
+            <button *ngIf="getCantidadCarrito(art.id) === 0" class="btn btn-primary rounded-pill"
+              (click)="sumar(art.id)">
               Agregar
             </button>
-            <div *ngIf="getCantidadCarrito(art._id) > 0" class="quantity-control">
-              <button (click)="restar(art._id)">-</button>
-              <span>{{ getCantidadCarrito(art._id) }}</span>
-              <button (click)="sumar(art._id)">+</button>
+            <div *ngIf="getCantidadCarrito(art.id) > 0" class="quantity-control">
+              <button (click)="restar(art.id)">-</button>
+              <span>{{ getCantidadCarrito(art.id) }}</span>
+              <button (click)="sumar(art.id)">+</button>
             </div>
           </div>
         </div>
