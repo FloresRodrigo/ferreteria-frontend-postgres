@@ -1,6 +1,6 @@
 export const API_CONFIG = {
-    baseUrl: 'https://ferreteria-backend-sequelize.onrender.com/api',
-    hostUrl: 'https://ferreteria-backend-sequelize.onrender.com/',
+    baseUrl: 'https://ferreteria-backend-postgres.onrender.com/api',
+    hostUrl: 'https://ferreteria-backend-postgres.onrender.com/',
 
     endpoints: {
         auth: 'auth',
